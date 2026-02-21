@@ -1,0 +1,9 @@
+[tools]
+age = "latest"
+fnox = "latest"
+go = "latest"
+golangci-lint = "latest"
+neovim = "latest"
+node = "latest"
+pnpm = "latest"
+watchexec = "latest"
