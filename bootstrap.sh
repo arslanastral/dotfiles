@@ -56,6 +56,6 @@ mkdir -p ~/.config/mise
 ln -sf ~/dotfiles/mise-config.toml ~/.config/mise/config.toml
 
 echo "==> Installing mise global tools..."
-mise install
+~/.local/bin/mise install
 
 echo "Done! Restart your shell or run: exec zsh"
