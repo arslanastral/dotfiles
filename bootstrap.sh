@@ -3,7 +3,13 @@ set -e
 
 echo "==> Installing dependencies..."
 sudo apt-get update -q
-sudo apt-get install -y zsh curl git
+sudo apt-get install -y \
+  zsh curl git wget gpg \
+  libatomic1 \
+  build-essential \
+  ca-certificates \
+  unzip \
+  xz-utils
 
 echo "==> Installing oh-my-zsh..."
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
