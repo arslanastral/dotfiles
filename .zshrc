@@ -125,12 +125,14 @@ source ~/.zsh_aliases
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-eval "$(/usr/bin/mise activate zsh)"
 
 # mise
-if command -v mise &>/dev/null; then
+if [ -f /usr/bin/mise ]; then
   eval "$(/usr/bin/mise activate zsh)"
+elif [ -f ~/.local/bin/mise ]; then
+  eval "$(~/.local/bin/mise activate zsh)"
 fi
+
 
 # fnox
 if command -v fnox &>/dev/null; then
