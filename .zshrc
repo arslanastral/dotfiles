@@ -127,10 +127,8 @@ source ~/.zsh_aliases
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # mise
-if [ -f /usr/bin/mise ]; then
-  eval "$(/usr/bin/mise activate zsh)"
-elif [ -f ~/.local/bin/mise ]; then
-  eval "$(~/.local/bin/mise activate zsh)"
+if command -v mise &>/dev/null; then
+  eval "$(mise activate zsh)"
 fi
 
 

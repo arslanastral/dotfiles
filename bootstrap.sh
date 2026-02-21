@@ -38,7 +38,12 @@ done
 
 echo "==> Installing mise..."
 if ! command -v mise &>/dev/null; then
-  curl https://mise.run | sh
+  sudo apt update -y && sudo apt install -y curl
+  sudo install -dm 755 /etc/apt/keyrings
+  curl -fSs https://mise.jdx.dev/gpg-key.pub | sudo tee /etc/apt/keyrings/mise-archive-keyring.asc 1> /dev/null
+  echo "deb [signed-by=/etc/apt/keyrings/mise-archive-keyring.asc] https://mise.jdx.dev/deb stable main" | sudo tee /etc/apt/sources.list.d/mise.list
+  sudo apt update -y
+  sudo apt install -y mise
 else
   echo "mise already installed, skipping"
 fi
@@ -56,6 +61,6 @@ mkdir -p ~/.config/mise
 ln -sf ~/dotfiles/mise-config.toml ~/.config/mise/config.toml
 
 echo "==> Installing mise global tools..."
-~/.local/bin/mise install
+mise install
 
 echo "Done! Restart your shell or run: exec zsh"
