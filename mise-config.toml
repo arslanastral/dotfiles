@@ -1,5 +1,6 @@
 [tools]
 age = "latest"
+atlas-community = "latest"
 fnox = "latest"
 go = "latest"
 golangci-lint = "latest"
