@@ -71,7 +71,7 @@ fi
 
 # fzf (Ctrl+r, Ctrl+t, Alt+c — just works if installed, nothing breaks if not)
 if command -v fzf &>/dev/null; then
-  export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview "batcat --color=always {} 2>/dev/null || cat {}"'
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border --preview "batcat --color=always {} 2>/dev/null || cat {}" --preview-window=hidden --bind "?:toggle-preview"'
 
   # use fd as engine if available (faster, respects .gitignore, no node_modules)
   if command -v fdfind &>/dev/null; then
